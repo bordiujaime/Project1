@@ -1,0 +1,15 @@
+canvas {
+  border: 1px solid blue;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+body {
+  background-image: url("./pixel-wallpapers-25278-662891.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}

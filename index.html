@@ -9,140 +9,151 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-      />
+      crossorigin="anonymous"/>
     <link rel="stylesheet" href="./index.css"></link>
     
   </head>
   <body >
-
-
+      <div class= "background">
     <div id="container"></div>
+<div class="score-container">
+  <p class="score-text">PRP</p>
+  
+    <div class= "score" id="score"> 0</div>
+  </div>
     <canvas id="canvas" width="500" height="400"></canvas>
-
-
 <!-- QUESTION ONE -->
 <div class="modal fade" id="question1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Question 1</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Challenge 1</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      Es alfonso retrasado?
+       <p> Hello my fellow heroe.</p> 
+       <p>Did you know that the hipopotamus sweat is pink? No? Well, now you do!</p>
+        <p>I have one question for you. You know the rules. If you fail you die and if you guess you get one Positive Reinforcemt Point (PRP):D</P>
+      <p>"Who invented the APPLE ? "</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-sm btn-block js-right" onclick ="rightAnswer()"  >Yes</button>
-        <button type="button" class="btn btn-primary btn-sm btn-block js-wrong" onclick = "gameOver()"  >cliaaaaaaaaroooo</button>
+        <button type="button" class="btn btn-danger btn-sm btn-block" data-dismiss="modal" onclick ="rightAnswer()"  >God or other forces we are not able to understand</button>
+        <button type="button" class="btn btn-primary btn-sm btn-block" onclick = "gameOver()"  >Steve Jobs</button>
       </div>
     </div>
   </div>
 </div>
-
 <!-- QUESTION 2 -->
 <div class="modal fade" id="question2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Question 1</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle2">Challenge 2</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Limes are red?
-
+        <p> Look, I am color blind and I need an anwser to this question</p>
+        Is the sky blue?
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-primary btn-sm btn-block js-right" onclick ="rightAnswer()"  >Yes</button>
-          <button type="button" class="btn btn-primary btn-sm btn-block js-wrong" onclick = "gameOver()"  >I see it green</button>
+          <button type="button" class="btn btn-primary btn-sm btn-block" data-dismiss="modal" onclick ="rightAnswer()"  >Depending the time of the day</button>
+          <button type="button" class="btn btn-warning btn-sm btn-block" onclick = "gameOver()"  >Yes, its blue, 100% sure about that</button>
       </div>
     </div>
   </div>
 </div>
-
-
 <!-- QUESTION 3 -->
 <div class="modal fade" id="question3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Question 1</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Question 3</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        Yes, I am the same character as before. I can teleport, GOD! stop staring at me and tell me the answer to the next question:
+        "Henes, Friheten, Tornviken are..."
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">A</button>
-        <button type="button" class="btn btn-primary">B</button>
+          <button type="button" class="btn btn-primary btn-sm btn-block"  onclick = "gameOver()">Really weird names for a baby or a deadth metal music band.</button>
+          <button type="button" class="btn btn-warning btn-sm btn-block" data-dismiss="modal" onclick ="rightAnswer()" >Ikea furniture</button>
       </div>
     </div>
   </div>
 </div>
-
-
 <!-- QUESTION 4 -->
-<div class="modal fade" id="question1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="question4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"> Question 1 </h5>
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"> THE FINAL AND MOST CHALLENGING CHALLENGE </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        Congratulations! The trip was not long but here is the MOST DIFFICULT and COMPLEX...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">A</button>
-        <button type="button" class="btn btn-primary">B</button>
+          <button type="button" class="btn btn-primary btn-sm btn-block" data-dismiss="modal" onclick ="finalModal()"  >Shut up and take me to the fireworks</button>
+          <button type="button" class="btn btn-warning btn-sm btn-block" onclick = "gameOver()"  >I am tired of living</button>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
 <!-- You are RIGHT!-->
 <div class="modal fade" id="youRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Correct</h5>
+          <h5 class="modal-title" id="exampleModalLabel">YOU ARE AWESOME</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          Correct! You may continue.
+        Correct! You may continue and you also get a mini-point! Isn't that AWESOME!
         </div>
         <div class="modal-footer">
-          
-          <button type="button" class="btn btn-primary">Hoorray!</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Hoorray!</button>
         </div>
       </div>
     </div>
   </div>
+</div>  
 
-
-
+<!-- Final CARD -->
+<div class="modal fade" id="finalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">  </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <img class="card-img-top" src="https://media.giphy.com/media/LPX95UzdV1bG0/giphy.gif" alt="Card image cap">
+        You had enough PRP in life. Please select any of the button bellow to continue.
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-sm btn-block" data-dismiss="modal" onclick ="startOver()">Start again this awesome adventure</button>
+          <button type="button" class="btn btn-warning btn-sm btn-block" onclick = "gameOver()"  >Maybe if you type something different at the beggining you can get a new message. Or inspect the source code to check what's going on behind!</button>
+      </div>
+    </div>
+  </div>
+</div>
     <script src="./index.js"></script>
-
-
-
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>

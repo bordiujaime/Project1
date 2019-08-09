@@ -1,14 +1,8 @@
-container = document.getElementById("container")
 
 
-container.innerHTML = `
-  <div class="number"> 0 </div>
-`
-let total = 0
+
+let counter = 0
 let level = 1
-
-let trueAnwser = document.getElementsByClassName("js-right")
-let falseAnwser = document.getElementsByClassName("js-wrong")
 
 //enemy1
 
@@ -28,6 +22,12 @@ const mainCharacter = new Image();
 mainCharacter.src = "http://www.avatarsinpixels.com/minipix/eyJFeWVzIjoiMiIsIlNob2VzIjoiMSIsIlBhbnRzIjoiMSIsIlRvcCI6IjEwIiwiSmFja2V0IjoiMyIsIkhhaXIiOiIzIiwic2tpblRvbmUiOiJmMWE1NzQiLCJleWVzVG9uZSI6IjAwMDAwMCIsImhhaXJUb25lIjoiNzMxNTE1IiwicGFudHNUb25lMiI6IjI5OWJjNiJ9/1/show.png";
 let mainX = 0
 let mainY = 300
+
+
+//finalenemy
+
+const enemy3 = new Image();
+enemy3.src = "http://www.avatarsinpixels.com/pony/eyJCb2R5IjoiMSIsIlRhaWwiOiI2IiwiTWFyayI6IjEiLCJXaW5ncyI6IjEiLCJFeWVzIjoiNSIsIkhhaXJCb3R0b20iOiIxNiIsImhhaXJUb25lIjoiZDQ1OWVhIiwic2tpblRvbmUiOiIzZmY4YmIiLCJleWVzVG9uZSI6IjY3NzU1OSJ9/1/show.png"
 
 
 //level 1 background
@@ -53,6 +53,9 @@ const back3 = new Image();
 back3.src = "./layers/far-buildings.png"
 
 
+//level 3 background
+const skyAndTrees = new Image();
+skyAndTrees.src = "./27d90765290819.5aef9188431e5.jpg"
 
 
 //level 1
@@ -80,7 +83,7 @@ function drawLevelTwo() {
   ctx.drawImage(back2, 0, 0, 500, 400);
   ctx.drawImage(back1, 0, 0, 500, 400);
 
-  ctx.drawImage(enemy1, 300, 300, 50, 50);
+  ctx.drawImage(enemy2, 300, 300, 50, 50);
   ctx.drawImage(mainCharacter, mainX, mainY, 50, 50);
   checkRightBorder()
   checkThirdQuestion()
@@ -92,15 +95,18 @@ function drawLevelTwo() {
 function drawLevelThree() {
   ctx.fillStyle = "white";
   ctx.fillRect(0, 0, 800, 400); //(x, y, width, height)  
-
   ctx.drawImage(ground, 0, 115, 500, 300);
-  ctx.drawImage(sky, 0, 0, 600, 320);
-  ctx.drawImage(enemy1, 100, 300, 50, 50);
-  ctx.drawImage(enemy1, 300, 300, 50, 50);
+  ctx.drawImage(skyAndTrees, 0, 0, 500, 400);
+  ctx.drawImage(enemy2, 100, 300, 50, 50);
+  ctx.drawImage(enemy3, 300, 210, 150, 150);
   ctx.drawImage(mainCharacter, mainX, mainY, 50, 50);
+
   checkRightBorder()
-  checkThirdQuestion()
+  checkFourthQuestion()
+  checkFifthQuestion()
 }
+
+
 
 function draw() {
   if (level === 1) { drawLevelOne() }
@@ -136,23 +142,35 @@ function checkFirstQuestion() {
 
 function checkSecondQuestion() {
   if (mainX === 300) {
-    $('#question1').modal(focus);
+    $('#question1').modal('show');
   }
 }
 
+//Second question
 function checkThirdQuestion() {
   if (mainX === 300) {
-    $('#question2').modal(focus);
+    $('#question2').modal('show');
   }
 }
 
-function checkThirdQuestion() {
+//Third question
+
+function checkFourthQuestion() {
+  if (mainX === 100) {
+    $('#question3').modal('show');
+  }
+}
+
+//Fourth question
+
+function checkFifthQuestion() {
   if (mainX === 300) {
-    $('#question3').modal(focus);
+    $('#question4').modal('show');
   }
 }
 
 
+//Change Level
 
 function checkRightBorder() {
   if (mainX === 500) {
@@ -167,18 +185,14 @@ function checkRightBorder() {
 
 function rightAnswer() {
   $('#youRight').modal(focus);
-  total += 1
-  number[0].innerHTML = total
+  counter += 1
+  updateScore();
 }
 
-//Answer Right adds +1 to the counter
-
-function Score() {
-  total += 1
-  number[0].innerHTML = total
-};
-
-
+function finalModal() {
+  $('#finalModal').modal(focus);
+  counter + 999
+}
 
 //Game Over
 
@@ -189,8 +203,17 @@ function gameOver() {
 }
 
 
+function updateScore() {
+  console.log(counter);
+  $('#score').html(' ' + counter);
+}
 
 
+//restart again
+
+function startOver() {
+  location.reload()
+}
 
 //onload1
 

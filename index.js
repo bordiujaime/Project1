@@ -1,19 +1,14 @@
-
-
-
 let counter = 0
 let level = 1
 
 //enemy1
 
 const enemy1 = new Image();
-
 enemy1.src = "http://www.avatarsinpixels.com/minipix/eyJFeWVzIjoiMTkiLCJNb3V0aCI6IjEzIiwiU2hvZXMiOiI1IiwiR2xvdmVzIjoiMyIsIlBhbnRzIjoiMyIsIkphY2tldCI6IjMiLCJIYWlyIjoiMTkifQ==/1/show.png";
 
 //enemy2
 
 const enemy2 = new Image();
-
 enemy2.src = "http://www.avatarsinpixels.com/minipix/eyJDYXBlQmFjayI6IjMiLCJFeWVzIjoiMjgiLCJTaG9lcyI6IjEiLCJQYW50cyI6IjIiLCJUb3AiOiIxMCIsIkJlbHQiOiIxIiwiSmFja2V0IjoiMiIsIkNhcGUiOiI1IiwiTmVjayI6IjMiLCJIYWlyIjoiMSIsInNraW5Ub25lIjoiZjFhNTc0IiwiZXllc1RvbmUiOiIwMDAwMDAiLCJoYWlyVG9uZSI6IjI5OWJjNiIsInBhbnRzVG9uZSI6IjYwYzE5NyIsInBhbnRzVG9uZTIiOiIyOTliYzYiLCJjYXBlVG9uZSI6ImI5MWUxZSIsImphY2tldFRvbmUiOiJmMzNjM2MifQ==/1/show.png"
 
 //main character look
@@ -59,6 +54,7 @@ skyAndTrees.src = "./27d90765290819.5aef9188431e5.jpg"
 
 
 //level 1
+
 function drawLevelOne() {
   ctx.fillStyle = "white";
   ctx.fillRect(0, 0, 800, 400); //(x, y, width, height)  
@@ -72,6 +68,7 @@ function drawLevelOne() {
   checkFirstQuestion()
   checkSecondQuestion()
   checkRightBorder()
+
 }
 
 //level 2
@@ -89,7 +86,6 @@ function drawLevelTwo() {
   checkThirdQuestion()
 }
 
-
 //level 3 
 
 function drawLevelThree() {
@@ -106,16 +102,11 @@ function drawLevelThree() {
   checkFifthQuestion()
 }
 
-
-
 function draw() {
   if (level === 1) { drawLevelOne() }
   if (level === 2) { drawLevelTwo() }
   if (level === 3) { drawLevelThree() }
 }
-
-
-
 
 //displays welcome alert
 
@@ -145,16 +136,13 @@ function checkSecondQuestion() {
     $('#question1').modal('show');
   }
 }
-
 //Second question
 function checkThirdQuestion() {
   if (mainX === 300) {
     $('#question2').modal('show');
   }
 }
-
 //Third question
-
 function checkFourthQuestion() {
   if (mainX === 100) {
     $('#question3').modal('show');
@@ -169,7 +157,6 @@ function checkFifthQuestion() {
   }
 }
 
-
 //Change Level
 
 function checkRightBorder() {
@@ -180,18 +167,20 @@ function checkRightBorder() {
   }
 }
 
-
 //Right anwser
 
 function rightAnswer() {
   $('#youRight').modal(focus);
   counter += 1
+  var audio = new Audio('./Audience_Applause-Matthiew11-1206899159.mp3');
+  audio.play();
   updateScore();
 }
 
 function finalModal() {
   $('#finalModal').modal(focus);
-  counter + 999
+  var audio = new Audio('./Fireworks-SoundBible.com-573238425.mp3');
+  audio.play();
 }
 
 //Game Over

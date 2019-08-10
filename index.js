@@ -1,5 +1,6 @@
 let counter = 0
 let level = 1
+let paused = false;
 
 //enemy1
 
@@ -112,7 +113,7 @@ function draw() {
 
 function checkFirstQuestion() {
   if (mainX === 100) {
-    var welcomeText = prompt("Hey! This is an interactive story.You will have to choose the correct answer. Make one mistake and it's over. Do you want to continues?")
+    var welcomeText = prompt("Hey! This is an interactive story.You will have to choose the correct answer. Make one mistake and it's over. Do you want to continue?")
 
     if (welcomeText === "yes") {
       alert("Excellent!, You may continue");
@@ -134,18 +135,21 @@ function checkFirstQuestion() {
 function checkSecondQuestion() {
   if (mainX === 300) {
     $('#question1').modal('show');
+    paused = true
   }
 }
 //Second question
 function checkThirdQuestion() {
   if (mainX === 300) {
     $('#question2').modal('show');
+    paused = true
   }
 }
 //Third question
 function checkFourthQuestion() {
   if (mainX === 100) {
     $('#question3').modal('show');
+    paused = true
   }
 }
 
@@ -154,10 +158,12 @@ function checkFourthQuestion() {
 function checkFifthQuestion() {
   if (mainX === 300) {
     $('#question4').modal('show');
+    paused = true
   }
 }
 
 //Change Level
+
 
 function checkRightBorder() {
   if (mainX === 500) {
@@ -173,6 +179,7 @@ function rightAnswer() {
   $('#youRight').modal(focus);
   counter += 1
   var audio = new Audio('./Audience_Applause-Matthiew11-1206899159.mp3');
+  paused=false;
   audio.play();
   updateScore();
 }
@@ -213,11 +220,13 @@ window.onload = function () {
   draw()
 
   document.onkeydown = (event) => {
-    if (event.keyCode === 39) {
-      mainX += 10
-    } else if (event.keyCode === 37) {
-      mainX -= 10
-    };
-    draw()
+    if (!paused) {
+      if (event.keyCode === 39) {
+        mainX += 10
+      } else if (event.keyCode === 37) {
+        mainX -= 10
+      };
+      draw()
+    }
   }
 }

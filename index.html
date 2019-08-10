@@ -18,9 +18,21 @@
     <div id="container"></div>
 <div class="score-container">
   <p class="score-text">PRP</p>
-  
     <div class= "score" id="score"> 0</div>
   </div>
+
+
+<div class="card text-white bg-dark mb-3 instructions" style="max-width: 18rem;">
+    <div class="card-header">INSTRUCTIONS</div>
+    <div class="card-body">
+      <p class="card-text"><p>Press the right arrow to move forward.</p> 
+      <p>Answer the correct anwsers during your adventure until you reach to the end.</p>
+      <img class="keyboard" src="./left_right_keys.png">
+    </div>
+  </div>
+
+
+
     <canvas id="canvas" width="500" height="400"></canvas>
 <!-- QUESTION ONE -->
 <div class="modal fade" id="question1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -74,7 +86,7 @@
         "Henes, Friheten, Tornviken are..."
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-primary btn-sm btn-block"  onclick = "gameOver()">Really weird names for a baby or a deadth metal music band.</button>
+          <button type="button" class="btn btn-primary btn-sm btn-block"  onclick = "gameOver()">The new name for Fred's baby or a deadth metal music band.</button>
           <button type="button" class="btn btn-warning btn-sm btn-block" data-dismiss="modal" onclick ="rightAnswer()" >Ikea furniture</button>
       </div>
     </div>
@@ -89,7 +101,10 @@
         
       </div>
       <div class="modal-body">
-        Congratulations! The trip was not long but here is the MOST DIFFICULT and COMPLEX...
+        Congratulations hero! 
+        <P>I am Deep Thought, and I have the answer to ALL the questions in the universe</P>
+        <P>You come from distant lands and you travel to here for the last and the MOST DIFFICULT and COMPLEX...</P>
+
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-primary btn-sm btn-block" data-dismiss="modal" onclick ="finalModal()"  >Shut up and take me to the fireworks</button>
@@ -122,13 +137,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">  </h5>
+        <h5 class="modal-title"> </h5>
     
-       
       </div>
       <div class="modal-body">
           <img class="card-img-top" src="https://media.giphy.com/media/LPX95UzdV1bG0/giphy.gif" alt="Card image cap">
-        You have reached the end with more than enough PRP. Please select any of the buttons bellow to continue or make a donation on my Paypal account.
+       <p> You have reached the end with more than enough PRP. Please select any of the buttons bellow to continue or make a donation on my Paypal account </p>
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-primary btn-sm btn-block" data-dismiss="modal" onclick ="startOver()">Start again this awesome adventure</button>
@@ -137,6 +151,7 @@
     </div>
   </div>
 </div>
+
     <script src="./index.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
